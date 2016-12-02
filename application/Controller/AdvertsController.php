@@ -14,6 +14,7 @@ class AdvertsController{
     }
 
     public function post() {
+        $title = "Envoyer Annonces";
         $advert = new Advert();
         require APP . 'view/_templates/header.php';
         require APP . 'view/adverts/postannonce.php';
