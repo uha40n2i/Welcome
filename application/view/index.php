@@ -9,17 +9,17 @@
 
 <div class="acceuil_div_global"> <!-- DIV GLOBAL -->
 	
-	<a href="http://www.msf.fr" target="_blank">
+	<a href="/pages/emergency" target="_blank">
 		<div class="acceuil_div1"> <!-- DIV1 -->
 		</div>
 	</a>
 
-	<a href="http://www.psmigrants.org/site/.fr" target="_blank">
+	<a href="/pages/contacts" target="_blank">
 		<div class="acceuil_div2"> <!-- DIV2 -->
 		</div>
 	</a>
 
-	<a href="https://api-site.paris.fr/images/77130" target="_blank">
+	<a href="/adverts" target="_blank">
 		<div class="acceuil_div3"> <!-- DIV3 -->
 		</div>
 	</a>

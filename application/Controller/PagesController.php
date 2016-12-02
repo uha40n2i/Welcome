@@ -11,18 +11,21 @@ class PagesController{
         $title = "Accueil";
         require APP . 'view/_templates/header.php';
         require APP . 'view/index.php';
+        require APP . 'view/_templates/footer.php';
     }
 
     public function emergency(){
         $title = "Urgences";
         require APP . 'view/_templates/header.php';
         require APP . 'view/emergency.php';
+        require APP . 'view/_templates/footer.php';
     }
 
     public function contacts(){
         $title = "Contacts";
         require APP . 'view/_templates/header.php';
         require APP . 'view/contacts.php';
+        require APP . 'view/_templates/footer.php';
     }
 
 }
