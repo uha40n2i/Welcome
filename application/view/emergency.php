@@ -16,7 +16,7 @@
         </div>
         <div class="numero samu">
             <h3 class="sous-titres">SAMU:</h3>
-            <p>Pour appeler le SAMU appelez le 15.</p>
+            <p>Pour entrer en contact avec le SAMU appelez le 15.</p>
             <p>Pour vous rendre sur leur site, cliquez ici.<a href="http://www.urgences-serveur.fr/" target="blank"><svg class="icone health" version="1.2" baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" overflow="inherit"><path d="M49 17c0-.55-.45-1-1-1h-13c-.55 0-1-.45-1-1v-13c0-.55-.45-1-1-1h-16c-.55 0-1 .45-1 1v13c0 .55-.45 1-1 1h-13c-.55 0-1 .45-1 1v16c0 .55.45 1 1 1h13c.55 0 1 .45 1 1v13c0 .55.45 1 1 1h16c.55 0 1-.45 1-1v-13c0-.55.45-1 1-1h13c.55 0 1-.45 1-1v-16z"/>    </a></p>
         </div>
         <div class="numero general">
