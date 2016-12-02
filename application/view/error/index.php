@@ -1,3 +1,12 @@
+<link href="<?php echo URL; ?>css/error.css" rel="stylesheet">
+
 <div class="container">
-    <p>This is the Error-page. Will be shown when a page (= controller / method) does not exist.</p>
+    <div class="row">
+        <div class="twelve columns">
+            <h2>Erreur 404, cette page n'existe pas.</h2>
+        </div>
+    </div>
 </div>
+
+</body>
+</html>

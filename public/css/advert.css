@@ -1,0 +1,15 @@
+.columns {
+    text-align: center;
+}
+
+.annonce {
+    border: #999896 solid 2px;
+    padding: 24px;
+    border-radius: 10px;
+}
+
+img {
+    border: #999896 solid 2px;
+    border-radius: 10px;
+    width: 75%;
+}
