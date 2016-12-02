@@ -17,6 +17,8 @@ $("#host-button").click(function(){
 
             if(radius>=1 && radius<=60){
 
+                var radiusKm = radius;
+
                 $(".results-contacts").empty();
 
                 $.ajax({
