@@ -1,0 +1,115 @@
+/**********
+ACCEUIL CSS
+***********/
+
+* {
+    padding: 0 auto 0 auto;
+    margin: 0 auto 0 auto;
+
+    background-color: #dbcece;
+
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: #3d3b3b;
+    font-size: 1em;
+}
+
+/*##################################################*/
+.acceuil_titre {
+	display: block;
+	text-align: center;
+	width: 1200px;
+}
+
+.acceuil_titre h2 {
+	margin: 40px 0 80px 0;
+}
+
+.acceuil_div_global {
+	display: flex;
+	justify-content: center
+
+	margin-top: 80px;
+	height: 400px;
+	width: 1200px;
+}
+
+/*##################################################*/
+
+.acceuil_div1 , .acceuil_div2 , .acceuil_div3 {
+	height: 400px;
+	width: 400px;
+}
+
+.acceuil_div1 {
+	background-image: url(../img/urgence.png);
+}
+
+.acceuil_div2 {
+	background-image: url(../img/contact.png);
+}
+
+.acceuil_div3 {
+	background-image: url(../img/petite_annoce.png);
+}
+
+/*##################################################*/
+
+.footer_acceuil {
+	margin-top: 100px;
+	text-align: center;
+	width: 1200px;
+	height: 30px;
+	border: 3px solid black;
+	text-align: center;
+}
+
+.footer_acceuil a {
+	margin: 5px 25px 5px 25px;
+}
+
+/*##################################################*/
+
+/******** MOBILE < 700 ********/
+@media only screen and (max-width: 700px) {
+
+    .acceuil_div_global {
+	    display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		margin-top: 10px;
+		height: 1200px;
+		width: 400px;
+    }
+	
+
+	.acceuil_titre {
+		display: block;
+		text-align: center;
+		width: 400px;
+	}
+
+
+	.acceuil_titre h2 {
+		border: 2px solid black;
+		margin: 40px 0 60px 0;
+		width: 400px;
+	}
+	
+
+	.footer_acceuil {
+		margin-top: 30px;
+		text-align: center;
+		width: 400px;
+		height: 150px;
+		border: 3px solid black;
+		text-align: center;
+	}
+
+
+	.footer_acceuil a {
+		display: block;
+		margin: 5px 20px 5px 20px;
+	}
+
+}
