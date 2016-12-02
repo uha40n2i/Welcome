@@ -1,0 +1,161 @@
+@font-face
+{
+
+    font-family: "robotoMed";
+    src: url(../../public/fonts/Roboto-Medium.ttf);
+
+}
+
+@font-face
+{
+
+    font-family: "robotoBold";
+    src: url(../../public/fonts/Roboto-Bold.ttf);
+
+}
+
+@font-face
+{
+
+    font-family: "robotoReg";
+    src: url(../../public/fonts/Roboto-Regular.ttf);
+
+}
+
+body
+{
+
+    font-family: "robotoReg";
+
+}
+
+h1.title
+{
+
+    font-family: "robotoBold";
+    text-align: center;
+    transition: 0.25s;
+    text-decoration: underline;
+
+}
+
+h1.title:hover
+{
+
+    color: firebrick;
+    text-underline-color: firebrick;
+
+}
+
+h3.sous-titres
+{
+
+    display: inline-block;
+    font-family: "robotoBold";
+    transition: 0.25s;
+
+}
+
+h3.sous-titres:hover
+{
+
+    text-shadow: 2px 1px 1px #000000;
+
+}
+
+div.contenu-numero
+{
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: #555555;
+    border-radius: 3px;
+    background-color: #E1E1E1;
+
+}
+
+div.numero
+{
+
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 8px;
+    background-color: #F1F1F1;
+    transition: 0.25s;
+
+}
+
+div.numero:hover
+{
+
+    background-color: beige;
+
+}
+
+svg.policier
+{
+
+    transition: 0.5s;
+
+}
+
+svg.policier:hover
+{
+
+    fill: midnightblue;
+
+}
+
+svg.fire
+{
+
+    transition: 0.5s;
+
+}
+
+svg.fire:hover
+{
+
+    fill: firebrick;
+
+}
+
+svg.health
+{
+
+    transition: 0.5s;
+
+}
+
+svg.health:hover
+{
+
+    fill: forestgreen;
+
+}
+
+span.centdouze
+{
+
+    color: darkred;
+    transition: 0.30s;
+
+}
+
+span.centdouze:hover
+{
+
+    color: red;
+    font-size: 115%;
+    font-family: "robotoBold";
+
+}
+
+svg.icone
+{
+
+    vertical-align: middle;
+
+}
