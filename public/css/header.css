@@ -1,0 +1,93 @@
+@font-face {
+
+    font-family: "aqua";
+    src: url(../../public/fonts/aqua.ttf);
+
+}
+
+h1.header-title
+{
+
+    font-family: "aqua";
+    text-align: center;
+    color: #333333;
+
+
+}
+
+div.conteneur-header
+{
+
+    padding-top: 20px;
+    background-color: #999896;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+
+}
+
+a
+{
+
+    font-size: 25px;
+    text-decoration: none;
+    transition: 0.25s;
+    color: #333333;
+
+}
+
+a:hover
+{
+
+    text-shadow: 2px 1px 1px #222222;
+    color: #333333;
+
+}
+
+a.bouton-menu:hover
+{
+
+    border-right-style: solid;
+    border-left-style: solid;
+    border-right-width: 2px;
+    border-left-width: 2px;
+    border-color: #333333;
+
+}
+
+a:visited
+{
+
+    text-decoration: none;
+
+}
+
+ul.menu-navbar
+{
+
+    margin-left: 40.3%;
+    display: flex;
+    list-style: none;
+
+}
+
+li
+{
+
+    font-family: "aqua";
+    padding-right: 12px;
+
+}
+
+@media only screen and (max-width: 700px)
+{
+
+    ul.menu-navbar
+    {
+
+        margin-left: 35%;
+        display: block;
+        list-style: none;
+
+    }
+
+}
