@@ -1,0 +1,146 @@
+@font-face
+{
+
+    font-family: "robotoMed";
+    src: url(../../public/fonts/Roboto-Medium.ttf);
+
+}
+
+@font-face
+{
+
+    font-family: "robotoBold";
+    src: url(../../public/fonts/Roboto-Bold.ttf);
+
+}
+
+@font-face
+{
+
+    font-family: "robotoReg";
+    src: url(../../public/fonts/Roboto-Regular.ttf);
+
+}
+
+.body
+{
+
+    font-family: "robotoReg";
+
+}
+
+span.title
+{
+
+    font-family: "robotoBold";
+    transition: 0.25s;
+    text-decoration: underline;
+
+}
+
+h1
+{
+
+    text-align: center;
+
+}
+
+h3.sous-titres
+{
+
+    display: inline-block;
+    font-family: "robotoBold";
+    transition: 0.25s;
+
+}
+
+div.contenu-numero
+{
+
+    padding-bottom: 5px;
+    border-style: none;
+    border-radius: 3px;
+
+}
+
+div.numero
+{
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 2px;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    margin-left: 20px;
+    border-style: solid;
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: #999896;
+
+}
+
+svg.policier
+{
+
+    transition: 0.5s;
+
+}
+
+svg.policier:hover
+{
+
+    fill: midnightblue;
+
+}
+
+svg.fire
+{
+
+    transition: 0.5s;
+
+}
+
+svg.fire:hover
+{
+
+    fill: firebrick;
+
+}
+
+svg.health
+{
+
+    transition: 0.5s;
+
+}
+
+svg.health:hover
+{
+
+    fill: red;
+
+}
+
+span.centdouze
+{
+
+    color: darkred;
+    transition: 0.30s;
+    font-size: 115%;
+    font-family: "robotoBold";
+
+}
+
+svg.icone
+{
+
+    vertical-align: middle;
+
+}
+p
+{
+
+    font-size:130%;
+    text-align: center;
+
+}
