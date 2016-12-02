@@ -1,0 +1,9 @@
+.columns {
+    text-align: center;
+}
+
+.annonce {
+    border: #999896 solid 2px;
+    padding: 12px;
+    border-radius: 10px;
+}
