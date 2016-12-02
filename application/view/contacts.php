@@ -2,16 +2,20 @@
 <link href="<?php echo URL; ?>css/contacts.css" rel="stylesheet">
 
 <div class="container">
+
+    <div class="alerts-contacts"></div>
+
     <br/>
 
     <center>
 
-        <button class="button-primary" id="host-button">Hébergements</button>
+        <button class="button-primary" id="host-button">Afficher les Hébergements</button>
 
         <br/>
         <br/>
 
         <input class="u-full-width" type="text" placeholder="Votre emplacement (rue + ville)" id="location-input">
+        <input class="u-half-width" type="text" placeholder="Rayon de recherche" id="radius-input">
 
         <hr>
 

@@ -8,6 +8,7 @@
     <link href="<?php echo URL; ?>css/normalize.css" rel="stylesheet">
     <link href="<?php echo URL; ?>css/skeleton.css" rel="stylesheet">
     <link href="<?php echo URL; ?>css/main.css" rel="stylesheet">
+    <link href="<?php echo URL; ?>css/alerts.css" rel="stylesheet">
 </head>
 <body>
 

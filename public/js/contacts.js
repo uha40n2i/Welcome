@@ -1,6 +1,4 @@
 
-var radiusKm = 20;
-
 function distance(lat1, lon1, lat2, lon2) {
     var p = 0.017453292519943295;    // Math.PI / 180
     var c = Math.cos;
@@ -13,52 +11,128 @@ function distance(lat1, lon1, lat2, lon2) {
 
 $("#host-button").click(function(){
 
-    $(".results-contacts").empty();
+    var radius = $("#radius-input").val();
 
-    $.ajax({
+    if(radius!=""){
 
-        url: "http://welcomen2i.eu/data/hebergements.json"
+        if(/^\d+$/.test(radius)){
 
-    }).done(function( dataHebergements ) {
+            if(radius>=1 && radius<=60){
 
-        var location = $("#location-input").val();
+                $(".results-contacts").empty();
 
-        if(location==""){
+                $.ajax({
 
-            for(var hebergements in dataHebergements.markers.marker){
+                    url: "/data/hebergements.json"
 
-                $(".results-contacts").append('<div class="cadre-contacts"><h6><a href="'+ dataHebergements.markers.marker[hebergements]._url +'" target="_blank">'+ dataHebergements.markers.marker[hebergements]._nom +'</a> à '+dataHebergements.markers.marker[hebergements]._ville +'</h6></div> <br/>');
+                }).done(function( dataHebergements ) {
+
+                    var location = $("#location-input").val();
+
+                    if(location==""){
+
+                        for(var hebergements in dataHebergements.markers.marker){
+
+                            $(".results-contacts").append('<div class="cadre-contacts"><h6><a href="'+ dataHebergements.markers.marker[hebergements]._url +'" target="_blank">'+ dataHebergements.markers.marker[hebergements]._nom +'</a> à '+dataHebergements.markers.marker[hebergements]._ville +'</h6></div> <br/>');
+
+                        }
+
+                    }else{
+
+                        $.ajax({
+
+                            url: "http://api.opencagedata.com/geocode/v1/json?q="+ encodeURI(location) +"&key=ec7d80425487db49c7d5a28f2b96f3e3"
+
+                        }).done(function( dataGeocoding ) {
+
+                            var latitude = dataGeocoding.results[0].geometry.lat;
+                            var longitude = dataGeocoding.results[0].geometry.lng;
+                            var postCode = dataGeocoding.results[0].components.postcode;
+                            var city = dataGeocoding.results[0].components.town;
+                            var qibla = dataGeocoding.results[0].annotations.qibla;
+                            var mapUrl = dataGeocoding.results[0].annotations.OSM.url;
+
+                            for(var hebergements in dataHebergements.markers.marker){
+
+                                if (distance(latitude, longitude, dataHebergements.markers.marker[hebergements]._lat, dataHebergements.markers.marker[hebergements]._lng) <= radiusKm){
+
+                                    $(".results-contacts").append('<div class="cadre-contacts"><h6><a href="'+ dataHebergements.markers.marker[hebergements]._url +'" target="_blank">'+ dataHebergements.markers.marker[hebergements]._nom +'</a> à '+dataHebergements.markers.marker[hebergements]._ville +'</h6><p>L\'emplacement se trouve à <b>'+ Math.floor(distance(latitude, longitude, dataHebergements.markers.marker[hebergements]._lat, dataHebergements.markers.marker[hebergements]._lng)) +'km</b><p> Cliquez <a href="https://www.google.fr/maps/dir/\''+ latitude +','+ longitude +'\'/'+ dataHebergements.markers.marker[hebergements]._lat +','+ dataHebergements.markers.marker[hebergements]._lng +'/" target="_blank">ici</a> pour voir l\'itinéraire vous menant jusqu\'à l\'emplacement</p></div> <br/>');
+
+                                }
+
+                            }
+
+                        });
+
+                    }
+
+                });
+
+            }else{
+
+                $(".alerts-contacts").append('<br/><br/><div class="alert"><span class="closebtn" onclick="this.parentElement.style.display=\'none\';">&times;</span> Le rayon de distance doit être entre 1 et 60km </div>');
 
             }
 
         }else{
 
-            $.ajax({
+            $(".alerts-contacts").append('<br/><br/><div class="alert"><span class="closebtn" onclick="this.parentElement.style.display=\'none\';">&times;</span> Merci d\'entrer un numéro correct pour le rayon de recherche </div>');
 
-                url: "http://api.opencagedata.com/geocode/v1/json?q="+ encodeURI($("#location-input").val()) +"&key=ec7d80425487db49c7d5a28f2b96f3e3"
+        }
 
-            }).done(function( dataGeocoding ) {
+    }else{
 
-                var latitude = dataGeocoding.results[0].geometry.lat;
-                var longitude = dataGeocoding.results[0].geometry.lng;
-                var postCode = dataGeocoding.results[0].components.postcode;
-                var city = dataGeocoding.results[0].components.town;
-                var qibla = dataGeocoding.results[0].annotations.qibla;
-                var mapUrl = dataGeocoding.results[0].annotations.OSM.url;
+        var radiusKm = 20;
+
+        $(".results-contacts").empty();
+
+        $.ajax({
+
+            url: "/data/hebergements.json"
+
+        }).done(function( dataHebergements ) {
+
+            var location = $("#location-input").val();
+
+            if(location==""){
 
                 for(var hebergements in dataHebergements.markers.marker){
 
-                    if (distance(latitude, longitude, dataHebergements.markers.marker[hebergements]._lat, dataHebergements.markers.marker[hebergements]._lng) <= radiusKm){
-
-                        $(".results-contacts").append('<div class="cadre-contacts"><h6><a href="'+ dataHebergements.markers.marker[hebergements]._url +'" target="_blank">'+ dataHebergements.markers.marker[hebergements]._nom +'</a> à '+dataHebergements.markers.marker[hebergements]._ville +'</h6><p>L\'emplacement se trouve à <b>'+ Math.floor(distance(latitude, longitude, dataHebergements.markers.marker[hebergements]._lat, dataHebergements.markers.marker[hebergements]._lng)) +'km</b><p> Cliquez <a href="https://www.google.fr/maps/dir/\''+ latitude +','+ longitude +'\'/'+ dataHebergements.markers.marker[hebergements]._lat +','+ dataHebergements.markers.marker[hebergements]._lng +'/" target="_blank">ici</a> pour voir l\'itinéraire vous menant jusqu\'à l\'emplacement</p></div> <br/>');
-
-                    }
+                    $(".results-contacts").append('<div class="cadre-contacts"><h6><a href="'+ dataHebergements.markers.marker[hebergements]._url +'" target="_blank">'+ dataHebergements.markers.marker[hebergements]._nom +'</a> à '+dataHebergements.markers.marker[hebergements]._ville +'</h6></div> <br/>');
 
                 }
 
-            });
-        }
+            }else{
 
-    });
+                $.ajax({
+
+                    url: "http://api.opencagedata.com/geocode/v1/json?q="+ encodeURI(location) +"&key=ec7d80425487db49c7d5a28f2b96f3e3"
+
+                }).done(function( dataGeocoding ) {
+
+                    var latitude = dataGeocoding.results[0].geometry.lat;
+                    var longitude = dataGeocoding.results[0].geometry.lng;
+                    var postCode = dataGeocoding.results[0].components.postcode;
+                    var city = dataGeocoding.results[0].components.town;
+                    var qibla = dataGeocoding.results[0].annotations.qibla;
+                    var mapUrl = dataGeocoding.results[0].annotations.OSM.url;
+
+                    for(var hebergements in dataHebergements.markers.marker){
+
+                        if (distance(latitude, longitude, dataHebergements.markers.marker[hebergements]._lat, dataHebergements.markers.marker[hebergements]._lng) <= radiusKm){
+
+                                $(".results-contacts").append('<div class="cadre-contacts"><h6><a href="'+ dataHebergements.markers.marker[hebergements]._url +'" target="_blank">'+ dataHebergements.markers.marker[hebergements]._nom +'</a> à '+dataHebergements.markers.marker[hebergements]._ville +'</h6><p>L\'emplacement se trouve à <b>'+ Math.floor(distance(latitude, longitude, dataHebergements.markers.marker[hebergements]._lat, dataHebergements.markers.marker[hebergements]._lng)) +'km</b><p> Cliquez <a href="https://www.google.fr/maps/dir/\''+ latitude +','+ longitude +'\'/'+ dataHebergements.markers.marker[hebergements]._lat +','+ dataHebergements.markers.marker[hebergements]._lng +'/" target="_blank">ici</a> pour voir l\'itinéraire vous menant jusqu\'à l\'emplacement</p></div> <br/>');
+
+                        }
+
+                    }
+
+                });
+
+            }
+
+        });
+
+    }
 
 });
