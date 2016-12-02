@@ -2,6 +2,9 @@
 
 namespace Mini\Controller;
 
+use Mini\Libs\PHPExcel;
+use Mini\Libs\PHPExcel_IOFactory;
+
 class PagesController{
 
     public function index(){
