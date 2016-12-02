@@ -23,7 +23,10 @@ $("#host-button").click(function(){
 
                 $.ajax({
 
-                    url: "/data/hebergements.json"
+                    url: "/data/hebergements.json",
+                    headers: {
+                        'Access-Control-Allow-Origin': '*'
+                    }
 
                 }).done(function( dataHebergements ) {
 
@@ -88,7 +91,10 @@ $("#host-button").click(function(){
 
         $.ajax({
 
-            url: "/data/hebergements.json"
+            url: "/data/hebergements.json",
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            }
 
         }).done(function( dataHebergements ) {
 
