@@ -14,7 +14,7 @@
         <br/>
         <br/>
 
-        <input class="u-full-width" type="text" placeholder="Votre emplacement (rue + ville)" id="location-input">
+        <input class="u-full-width" type="text" placeholder="Votre emplacement (rue + ville)" id="location-input" value="20">
         <input class="u-half-width" type="text" placeholder="Rayon de recherche" id="radius-input">
 
         <hr>
