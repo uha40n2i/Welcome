@@ -30,6 +30,8 @@ $("#host-button").click(function(){
 
                 }).done(function( dataHebergements ) {
 
+                    console.log(dataHebergements);
+
                     var location = $("#location-input").val();
 
                     if(location==""){
