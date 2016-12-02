@@ -22,28 +22,26 @@
 
 }
 
-body
+.body
 {
 
     font-family: "robotoReg";
 
 }
 
-h1.title
+span.title
 {
 
     font-family: "robotoBold";
-    text-align: center;
     transition: 0.25s;
     text-decoration: underline;
 
 }
 
-h1.title:hover
+h1
 {
 
-    color: firebrick;
-    text-underline-color: firebrick;
+    text-align: center;
 
 }
 
@@ -56,20 +54,12 @@ h3.sous-titres
 
 }
 
-h3.sous-titres:hover
-{
-
-    text-shadow: 2px 1px 1px #000000;
-
-}
-
 div.contenu-numero
 {
+
     padding-bottom: 5px;
     border-style: none;
-    border-color: #555555;
     border-radius: 3px;
-    background-color: #D1D1D1;
 
 }
 
@@ -78,18 +68,14 @@ div.numero
 
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 2px;
+    margin-bottom: 15px;
     margin-right: 20px;
     margin-left: 20px;
+    border-style: solid;
     border-radius: 8px;
-    background-color: #F1F1F1;
-    transition: 0.25s;
-
-}
-
-div.numero:hover
-{
-
-    background-color: beige;
+    border-width: 2px;
+    border-color: #999896;
 
 }
 
@@ -131,7 +117,7 @@ svg.health
 svg.health:hover
 {
 
-    fill: forestgreen;
+    fill: red;
 
 }
 
@@ -140,13 +126,6 @@ span.centdouze
 
     color: darkred;
     transition: 0.30s;
-
-}
-
-span.centdouze:hover
-{
-
-    color: red;
     font-size: 115%;
     font-family: "robotoBold";
 
@@ -156,5 +135,12 @@ svg.icone
 {
 
     vertical-align: middle;
+
+}
+p
+{
+
+    font-size:130%;
+    text-align: center;
 
 }
