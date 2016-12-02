@@ -13,6 +13,8 @@ function distance(lat1, lon1, lat2, lon2) {
 
 $("#host-button").click(function(){
 
+    $(".results-contacts").empty();
+
     $.ajax({
 
         url: "http://welcomen2i.eu/data/hebergements.json"
@@ -43,8 +45,6 @@ $("#host-button").click(function(){
                 var city = dataGeocoding.results[0].components.town;
                 var qibla = dataGeocoding.results[0].annotations.qibla;
                 var mapUrl = dataGeocoding.results[0].annotations.OSM.url;
-
-                $(".results-contacts").empty();
 
                 for(var hebergements in dataHebergements.markers.marker){
 
