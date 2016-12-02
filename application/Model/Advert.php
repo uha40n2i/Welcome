@@ -24,4 +24,10 @@ class Advert extends Model
             'image' => $image
         ));
     }
+
+    public function deleteAdvert($id)
+    {
+        $response = $this->db->query("DELETE FROM annonces WHERE id=" . $_GET['id']);
+        $response->closeCursor();
+    }
 }

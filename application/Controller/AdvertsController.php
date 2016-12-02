@@ -18,4 +18,9 @@ class AdvertsController{
         require APP . 'view/_templates/header.php';
         require APP . 'view/adverts/postannonce.php';
     }
+
+    public function delete() {
+        $advert = new Advert();
+        require APP . 'view/adverts/deleteannonce.php';
+    }
 }

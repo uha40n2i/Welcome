@@ -15,10 +15,8 @@ if (isset($_POST['emailInput']) && isset($_POST['titreInput']) && isset($_POST['
         }
     }
     $advert->postAdvert($_POST['titreInput'], $_POST['descriptionInput'], $_POST['emailInput'], isset($_POST['copie']) ? $_POST['copie'] : 0, $infosfichier == null ? "" : $n . "." . $infosfichier['extension']);
+    header('Location: /adverts');
 }
-
-
-
 ?>
 
 <link href="<?php echo URL; ?>css/advert.css" rel="stylesheet">
@@ -59,8 +57,6 @@ if (isset($_POST['emailInput']) && isset($_POST['titreInput']) && isset($_POST['
             </form>
         </div>
     </div>
-
-
 </div>
 
 </body>

@@ -24,6 +24,7 @@
             }
             echo "<p>" . $a->description . "</p>
             <a class=\"button button-primary\" href=\"mailto:" . $a->email . "\">Contacter</a>
+            <a class=\"button button-primary\" href=\"/adverts/delete?id=" . $a->id ."\">Supprimer</a>
         </div><br>
             ";
 
