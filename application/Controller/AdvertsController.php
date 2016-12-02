@@ -11,6 +11,7 @@ class AdvertsController{
         $advert = new Advert();
         require APP . 'view/_templates/header.php';
         require APP . 'view/adverts/index.php';
+        require APP . 'view/_templates/footer.php';
     }
 
     public function post() {
@@ -18,6 +19,7 @@ class AdvertsController{
         $advert = new Advert();
         require APP . 'view/_templates/header.php';
         require APP . 'view/adverts/postannonce.php';
+        require APP . 'view/_templates/footer.php';
     }
 
     public function delete() {
